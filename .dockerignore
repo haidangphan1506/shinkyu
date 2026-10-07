@@ -1,0 +1,15 @@
+node_modules
+.git
+.next
+.opencode
+.claude
+.prettier
+.prettierignore
+Dockerfile
+.dockerignore
+AGENTS.md
+CLAUDE.md
+opencode.json
+README.md
+.swc
+__tests__
