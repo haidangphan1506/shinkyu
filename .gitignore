@@ -44,5 +44,4 @@ next-env.d.ts
 .swc
 docs
 # opencode & unit tests
-.opencode
 __tests__
