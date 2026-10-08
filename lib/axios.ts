@@ -5,7 +5,6 @@ import { createEmitter } from './emitter';
 import { tokenStorage } from './token-storage';
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api';
-const LOGIN_PATH = '/login';
 
 declare module 'axios' {
   interface AxiosRequestConfig {
@@ -71,7 +70,7 @@ class AxiosClient {
           if (await this.refreshToken()) {
             return this.instance(original);
           }
-          this.logout();
+          this.clearSession();
         }
 
         return Promise.reject(this.toApiError(error));
@@ -133,13 +132,6 @@ class AxiosClient {
 
   hasSession(): boolean {
     return !!tokenStorage.getAccessToken();
-  }
-
-  private logout() {
-    this.clearSession();
-    if (typeof window !== 'undefined' && window.location.pathname !== LOGIN_PATH) {
-      window.location.href = LOGIN_PATH;
-    }
   }
 
   private startLoading(config?: { skipLoading?: boolean }) {

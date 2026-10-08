@@ -1,4 +1,5 @@
 export { CreateMemberDialog, EditMemberDialog, ChangeStatusDialog } from './forms';
+export { NotFound } from './shared';
 export {
   Button,
   ConfirmDialog,

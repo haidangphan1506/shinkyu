@@ -31,4 +31,3 @@ export type AppDispatch = AppStore['dispatch'];
 
 export { setSidebarCollapsed, toggleSidebarCollapsed } from '../slices/ui-slice';
 export { dismissToast, pushToast } from '../slices/toast-slice';
-export type { UiState } from '../types';

@@ -13,3 +13,7 @@ opencode.json
 README.md
 .swc
 __tests__
+
+.env
+.env.*
+coverage

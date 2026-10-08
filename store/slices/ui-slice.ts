@@ -1,8 +1,5 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
-
-export type UiState = {
-  sidebarCollapsed: boolean;
-};
+import type { UiState } from '@/types';
 
 const initialState: UiState = {
   sidebarCollapsed: false,

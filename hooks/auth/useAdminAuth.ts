@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { ROUTES } from '@/constants';
 import { axiosClient } from '@/lib/axios';
 
 /**
@@ -28,7 +29,7 @@ export function useAdminAuth(redirectTo?: string) {
 
   const logout = useCallback(() => {
     axiosClient.clearSession();
-    router.replace('/login');
+    router.replace(ROUTES.LOGIN);
   }, [router]);
 
   return { isAuthenticated, ready, logout };
